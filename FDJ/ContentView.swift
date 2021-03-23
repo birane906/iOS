@@ -32,12 +32,18 @@ struct ContentView: View {
                     LoginButtom()
                         .padding(.bottom,50)
                 }
-                Button(action: {print("Boutton cliqué")}
-                ){
+                
+                Button(action: {print("button clicked")}){
                     Text("Accès visiteur")
                         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 }
                 
+                NavigationView{
+                    NavigationLink(destination : HomeVisiteur()
+                    ){
+                        Text("AAAAA")
+                    }
+                }
             }
             .padding()
             if authenticationSuccessed{
