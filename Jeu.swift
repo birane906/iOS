@@ -56,13 +56,6 @@ class Jeu {
         self.ageMin = ageMin
         self.notice = notice
         self.Isprototype = Isprototype
-        
     }
-    
-    
-    
-    
-    
-    
     
 }
