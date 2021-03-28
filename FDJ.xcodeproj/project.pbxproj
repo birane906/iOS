@@ -27,16 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B701ECF52609EF2B00D3D5A8 /* Jeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jeu.swift; sourceTree = SOURCE_ROOT; };
-		B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuIntent.swift; sourceTree = SOURCE_ROOT; };
+		B701ECF52609EF2B00D3D5A8 /* Jeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Jeu.swift; path = FDJ/Models/Jeu.swift; sourceTree = SOURCE_ROOT; };
+		B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JeuIntent.swift; path = FDJ/Intent/JeuIntent.swift; sourceTree = SOURCE_ROOT; };
 		B701ED0D2609F12400D3D5A8 /* JeuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuViewModel.swift; sourceTree = "<group>"; };
-		CC718DC0260B818200F0C45F /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Zone.swift; path = FDJ/Views/Zone.swift; sourceTree = SOURCE_ROOT; };
+		CC718DC0260B818200F0C45F /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Zone.swift; path = FDJ/Models/Zone.swift; sourceTree = SOURCE_ROOT; };
 		CC718DC8260B974900F0C45F /* ZoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneListView.swift; sourceTree = "<group>"; };
-		CC718DD2260C83FF00F0C45F /* Editeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Editeur.swift; path = FDJ/Views/Editeur.swift; sourceTree = SOURCE_ROOT; };
+		CC718DD2260C83FF00F0C45F /* Editeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Editeur.swift; path = FDJ/Models/Editeur.swift; sourceTree = SOURCE_ROOT; };
 		CC718DD8260E9BD900F0C45F /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		CC718DDD260F97B700F0C45F /* ZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewModel.swift; sourceTree = "<group>"; };
 		CC718DE0260F9E7A00F0C45F /* ZoneListHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneListHelper.swift; sourceTree = "<group>"; };
-		CC718DE326109CE900F0C45F /* ZoneIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneIntent.swift; path = FDJ/Helper/ZoneIntent.swift; sourceTree = SOURCE_ROOT; };
+		CC718DE326109CE900F0C45F /* ZoneIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneIntent.swift; path = FDJ/Intent/ZoneIntent.swift; sourceTree = SOURCE_ROOT; };
 		CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchZoneViewModel.swift; sourceTree = "<group>"; };
 		CC718DF62610F5B700F0C45F /* JeuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuView.swift; sourceTree = "<group>"; };
 		CC718DFA2611096800F0C45F /* JeuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuDetailView.swift; sourceTree = "<group>"; };
@@ -78,6 +78,25 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		CC718DFD26112E5600F0C45F /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				CC718DE326109CE900F0C45F /* ZoneIntent.swift */,
+				B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
+		CC718DFE26112E7000F0C45F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC718DD2260C83FF00F0C45F /* Editeur.swift */,
+				CC718DC0260B818200F0C45F /* Zone.swift */,
+				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CC8DD39D2600F08C0006DB23 = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +116,11 @@
 		CC8DD3A82600F08C0006DB23 /* FDJ */ = {
 			isa = PBXGroup;
 			children = (
+				CC718DFE26112E7000F0C45F /* Models */,
+				CC718DFD26112E5600F0C45F /* Intent */,
 				CC718DD7260E997200F0C45F /* Helper */,
 				B701ECF42609EEF600D3D5A8 /* ViewModel */,
-				CC8DD3C72603D37E0006DB23 /* Intent */,
 				CC8DD3BF2603D29E0006DB23 /* Views */,
-				CC8DD3BE2603D2900006DB23 /* Models */,
 				CC8DD3A92600F08C0006DB23 /* FDJApp.swift */,
 				CC8DD3AB2600F08C0006DB23 /* ContentView.swift */,
 				CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */,
@@ -119,16 +138,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CC8DD3BE2603D2900006DB23 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
-				CC718DC0260B818200F0C45F /* Zone.swift */,
-				CC718DD2260C83FF00F0C45F /* Editeur.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		CC8DD3BF2603D29E0006DB23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,15 +146,6 @@
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CC8DD3C72603D37E0006DB23 /* Intent */ = {
-			isa = PBXGroup;
-			children = (
-				B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */,
-				CC718DE326109CE900F0C45F /* ZoneIntent.swift */,
-			);
-			path = Intent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
