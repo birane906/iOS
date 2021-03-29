@@ -14,15 +14,15 @@ struct ZoneData: Codable{
 }
 
 struct ZoneListHelper {
-//    static func zoneData2Zone(data: ZoneData) -> [Zone]?{
-//        var zones = [Zone]()
-//        for zdata in data{
-//            let id : Int = zdata.id_zone
-//            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone)
-//            zones.append(zone)
-//        }
-//        return zones
-//    }
+    static func zoneData2Zone(data: ZoneData) -> [Zone]?{
+        var zones = [Zone]()
+        for zdata in data{
+            let id : Int = zdata.id_zone
+            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone)
+            zones.append(zone)
+        }
+        return zones
+    }
     
 //    static func loadZones(fromFileUrl url: URL) -> Result<[Zone],HttpRequestError>{
 //        let result = ApiHelper.loadJsonFile(from: url, dataType: [ZoneData].self)
@@ -35,7 +35,7 @@ struct ZoneListHelper {
 //        }
 //    }
     
-    static func loadZonesFromAPI(url surl: String, endofrequest: @escaping (Result<Zone,HttpRequestError>) -> Void){
+    static func loadZonesFromAPI(url surl: String, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
         guard let url = URL(string: surl) else {
             endofrequest(.failure(.badURL(surl)))
             return
@@ -44,11 +44,11 @@ struct ZoneListHelper {
     }
     
     
-    static func loadZonesFromAPI(url: URL, endofrequest: @escaping (Result<Zone,HttpRequestError>) -> Void){
+    static func loadZonesFromAPI(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
         self.loadZonesFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
     }
     
-    private static func loadZonesFromJsonData(url: URL, endofrequest: @escaping (Result<Zone,HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
+    private static func loadZonesFromJsonData(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
@@ -60,17 +60,17 @@ struct ZoneListHelper {
                     DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
                     return
                 }
-                var zonesData : Zone
+                var zonesData : [ZoneData]
                
-                zonesData = (decodedResponse as! Zone)
+                zonesData = (decodedResponse as! [ZoneData])
                 
-//                guard let zones = self.zoneData2Zone(data: zonesData) else{
-//                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
-//                    return
-//                }
+                guard let zones = self.zoneData2Zone(data: zonesData) else{
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
                 
                 DispatchQueue.main.async {
-                    endofrequest(.success(zonesData))
+                    endofrequest(.success(zones))
                 }
             }
             else{

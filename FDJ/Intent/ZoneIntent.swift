@@ -7,26 +7,31 @@
 
 import Foundation
 
+
 class ZoneIntent {
     
-    @ObservedObject var zone : SearchZoneViewModel
+    @ObservedObject var zonelist : SearchZoneViewModel
     
-    init(zone: SearchZoneViewModel) {
-        self.zone = zone
+    init(zonelist: SearchZoneViewModel) {
+        self.zonelist = zonelist
+    }
+    
+    func loaded(zones:[Zone]){
+        self.zonelist.zoneListState = .ready
     }
     
     func loadZone(url : String){
-        zone.searchZoneState = .loading(url)
+        zonelist.zoneListState = .loading(url)
         ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
     }
     
-    func httpJsonLoaded(result: Result<Zone, HttpRequestError>){
+    func httpJsonLoaded(result: Result<[Zone], HttpRequestError>){
         switch result{
         case let .success(data):
             print("success : \(data)")
-            zone.searchZoneState = .loaded(data)
+            zonelist.zoneListState = .loaded(data)
         case let .failure(error):
-            zone.searchZoneState = .loadingError(error)
+            zonelist.zoneListState = .loadingError(error)
         }
     }
 }

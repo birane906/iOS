@@ -14,8 +14,7 @@ struct SZone: Decodable {
     private(set) var name_zone : String
 }
 
-class Zone : Decodable,ObservableObject {
-    
+class Zone : Decodable,ObservableObject,Identifiable {
     private(set) var id_zone: Int
     private(set) var id_espace : Int
     private(set) var name_zone : String

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class Jeu : Decodable, Identifiable {
-    public var id: Int
+    public var id_jeu : Int
     public var name_jeu : String
     public var id_type : Int
     public var libelle_type : String
@@ -19,8 +19,8 @@ class Jeu : Decodable, Identifiable {
     public var agemin : Int
     public var editeur : Editeur
     
-    init(id:Int,name_jeu:String,id_type:Int,libelle_type:String,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,editeur:Editeur){
-        self.id = id
+    init(id_jeu:Int,name_jeu:String,id_type:Int,libelle_type:String,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,editeur:Editeur){
+        self.id_jeu = id_jeu
         self.name_jeu = name_jeu
         self.id_type = id_type
         self.libelle_type = libelle_type

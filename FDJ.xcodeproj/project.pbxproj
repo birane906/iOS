@@ -24,6 +24,7 @@
 		CC8DD3AC2600F08C0006DB23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DD3AB2600F08C0006DB23 /* ContentView.swift */; };
 		CC8DD3AE2600F08E0006DB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */; };
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
+		CC9E497126126CF8007B586F /* Zonelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497026126CF8007B586F /* Zonelist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC8DD3B22600F08E0006DB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9E497026126CF8007B586F /* Zonelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zonelist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				CC718DD2260C83FF00F0C45F /* Editeur.swift */,
 				CC718DC0260B818200F0C45F /* Zone.swift */,
 				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
+				CC9E497026126CF8007B586F /* Zonelist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8DD3AC2600F08C0006DB23 /* ContentView.swift in Sources */,
+				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
 				CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */,
 				CC718DDE260F97B700F0C45F /* ZoneViewModel.swift in Sources */,
