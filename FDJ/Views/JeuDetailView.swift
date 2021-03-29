@@ -18,6 +18,7 @@ struct JeuDetailView: View {
     var body: some View {
         VStack {
             Text("Jeu : \(jeu.name_jeu)")
+            Text("Nombre joueur min : \(jeu.nb_joueurs_min)")
         }
     }
 }

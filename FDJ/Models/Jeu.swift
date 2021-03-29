@@ -7,9 +7,8 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
-struct Jeu : Decodable, Identifiable {
+class Jeu : Decodable, Identifiable {
     public var id: Int
     public var name_jeu : String
     public var id_type : Int

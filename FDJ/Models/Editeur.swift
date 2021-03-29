@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 struct Editeur : Decodable {
     public var id_editeur: Int

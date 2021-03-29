@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 struct SZone: Decodable {
     private(set) var id_zone: Int

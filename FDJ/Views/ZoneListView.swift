@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ZoneListView: View {
+    
     @ObservedObject var searchZone : SearchZoneViewModel
     var zoneintent : ZoneIntent
     private var url : String = "http://localhost:8080/api/zone"
@@ -16,12 +17,9 @@ struct ZoneListView: View {
         self.searchZone = searchZone
         self.zoneintent = ZoneIntent(zone : searchZone)
         let _ = self.searchZone.$searchZoneState.sink(receiveValue: stateChanged)
-                endOfInit()
-    }
-    
-    func endOfInit(){
         self.zoneintent.loadZone(url: url)
     }
+    
     
     func stateChanged(state : SearchZoneState){
         switch state {
@@ -42,7 +40,7 @@ struct ZoneListView: View {
                 List{
                     ForEach(self.searchZone.model){zone in
                         NavigationLink(
-                            destination: JeuView(zone: <#T##Zone#>),
+                            destination: JeuView(zone: zone),
                             label: {
                                 /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
                             })
