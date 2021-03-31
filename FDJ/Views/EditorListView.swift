@@ -14,7 +14,7 @@ struct EditorListView: View {
     init(editorList: EditorListViewModel) {
         self.editorList = editorList
         self.intent = EditorListViewIntent(editorList: editorList)
-        self.intent.loadEditorList(surl: "http://176.136.177.203:18080/api/editeur")
+        
     }
     
     var body: some View {
@@ -31,7 +31,9 @@ struct EditorListView: View {
                     }
                 }
             }
-        }
+        }.onAppear(perform: {
+            self.intent.loadEditorList(surl: "http://localhost:8080/api/editeur")
+        })
     }
 }
 
