@@ -9,10 +9,10 @@ import SwiftUI
 
 struct JeuView: View {
     
-    var zone : ZoneViewModel
+    var jeux : [Jeu]
     
-    init(zone:ZoneViewModel){
-        self.zone = zone
+    init(jeux:[Jeu]){
+        self.jeux = jeux
     }
     
     var body: some View {

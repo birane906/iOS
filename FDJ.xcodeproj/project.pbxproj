@@ -25,6 +25,8 @@
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
 		CC9E497126126CF8007B586F /* Zonelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497026126CF8007B586F /* Zonelist.swift */; };
 		CC9E49752614A34B007B586F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E49742614A34B007B586F /* MainView.swift */; };
+		CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498226150690007B586F /* ListJeuxViewModel.swift */; };
+		CC9E498626150F54007B586F /* JeuxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498526150F54007B586F /* JeuxList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		CC8DD3B22600F08E0006DB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E497026126CF8007B586F /* Zonelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zonelist.swift; sourceTree = "<group>"; };
 		CC9E49742614A34B007B586F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CC9E498226150690007B586F /* ListJeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJeuxViewModel.swift; sourceTree = "<group>"; };
+		CC9E498526150F54007B586F /* JeuxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				B701ED0D2609F12400D3D5A8 /* JeuViewModel.swift */,
 				CC718DDD260F97B700F0C45F /* ZoneViewModel.swift */,
 				CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */,
+				CC9E498226150690007B586F /* ListJeuxViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 				CC718DC0260B818200F0C45F /* Zone.swift */,
 				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
 				CC9E497026126CF8007B586F /* Zonelist.swift */,
+				CC9E498526150F54007B586F /* JeuxList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
+				CC9E498626150F54007B586F /* JeuxList.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
 				CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */,
 				CC718DDE260F97B700F0C45F /* ZoneViewModel.swift in Sources */,
@@ -229,6 +236,7 @@
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
+				CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */,
 				CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */,
 				CC9E49752614A34B007B586F /* MainView.swift in Sources */,
 				CC718DC9260B974900F0C45F /* ZoneListView.swift in Sources */,
