@@ -8,7 +8,7 @@ class JeuListViewIntent {
         self.jeuList = jeuList
     }
     
-    func loadJeuList(surl: String) {
+    func loadeuList(surl: String) {
         guard let url = URL(string: surl) else {
             return
         }
