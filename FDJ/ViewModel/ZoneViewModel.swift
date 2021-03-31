@@ -8,6 +8,9 @@
 import Foundation
 
 class ZoneViewModel: Identifiable, Equatable {
+    
+    var id = UUID()
+    
     static func == (lhs: ZoneViewModel, rhs: ZoneViewModel) -> Bool {
         return lhs.id == rhs.id
     }

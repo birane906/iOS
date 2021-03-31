@@ -28,7 +28,7 @@ struct ZoneData: Codable{
     public var id_zone: Int
     public var id_espace : Int
     public var name_zone : String
-    public var jeux : [JeuData]
+    public var jeux : [JeuData]?
 }
 
 struct ZoneListHelper {
@@ -38,7 +38,7 @@ struct ZoneListHelper {
         var zones = [Zone]()
         for zdata in data{
             let id : Int = zdata.id_zone
-            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone, jeux : JeuData2Jeu(data:zdata.jeux))
+            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone, jeux : JeuData2Jeu(data:zdata.jeux!))
             zones.append(zone)
         }
         return zones
@@ -86,6 +86,15 @@ struct ZoneListHelper {
     
     static func loadZonesFromAPI(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
         self.loadZonesFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
+    }
+    
+    // todo
+    private static func loadEditeursFromJsonData(url: URL, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
+        
+    }
+    
+    private static func loadJeuxFromJsonData(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
+        
     }
     
     private static func loadZonesFromJsonData(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){

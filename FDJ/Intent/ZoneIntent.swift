@@ -20,6 +20,10 @@ class ZoneIntent {
         self.zonelist.zoneListState = .ready
     }
     
+    func loaded(){
+        self.zonelist.zoneListState = .ready
+    }
+    
     func loadZone(url : String){
         zonelist.zoneListState = .loading(url)
         ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
@@ -36,7 +40,7 @@ class ZoneIntent {
     }
     
     func loadListZoneFromApi(){
-        var url = "http://localhost:8080/api/zone"
+        let url = "http://localhost:8080/api/zone"
         self.zonelist.zoneListState = .loading(url)
         ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
     }

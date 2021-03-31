@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct Editeur : Decodable {
+struct Editeur : Encodable {
     public var id_editeur: Int
     public var nom_editeur : String
     

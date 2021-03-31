@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class Jeu : Decodable, Identifiable {
+class Jeu : Encodable, Identifiable {
     public var id_jeu : Int
     public var name_jeu : String
     public var id_type : Int

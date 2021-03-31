@@ -15,10 +15,20 @@ struct ZoneListView: View {
     init(searchZone : SearchZoneViewModel){
         self.searchZone = searchZone
         self.zoneintent = ZoneIntent(zonelist : searchZone)
-        let _ = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
-        self.zoneintent.loadListZoneFromApi()
+        let _  = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
+        if case .ready = self.searchZone.zoneListState {
+            self.zoneintent.loadListZoneFromApi()
+        }
+        print("Init zonelist")
     }
     
+    private var searchState : SearchZoneState{
+        return self.searchZone.zoneListState
+    }
+    
+    var zones : [ZoneViewModel] {
+        return self.searchZone.zones
+    }
     
     func stateChanged(state : SearchZoneState){
         switch state {

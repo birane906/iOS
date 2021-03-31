@@ -7,14 +7,16 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-struct SZone: Decodable {
-    private(set) var id_zone: Int
-    private(set) var id_espace : Int
-    private(set) var name_zone : String
-}
+//struct SZone: Decodable {
+//    private(set) var id_zone: Int
+//    private(set) var id_espace : Int
+//    private(set) var name_zone : String
+//}
 
-class Zone : Decodable,ObservableObject,Identifiable {
+class Zone : ObservableObject,Identifiable,Encodable {
+    
     private(set) var id_zone: Int
     private(set) var id_espace : Int
     private(set) var name_zone : String
@@ -24,14 +26,14 @@ class Zone : Decodable,ObservableObject,Identifiable {
         self.id_zone = id_zone
         self.id_espace = id_espace
         self.name_zone = name_zone
-        self.jeux = jeux
+        self.jeux = jeux!
     }
     
     func new (zone: Zone) {
         self.id_zone = zone.id_zone
         self.id_espace = zone.id_espace
         self.name_zone = zone.name_zone
-        self.jeux = zone.jeux
+        self.jeux = zone.jeux!
     }
 }
 
