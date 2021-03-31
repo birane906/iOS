@@ -34,4 +34,10 @@ class ZoneIntent {
             zonelist.zoneListState = .loadingError(error)
         }
     }
+    
+    func loadListZoneFromApi(){
+        var url = "http://localhost:8080/api/zone"
+        self.zonelist.zoneListState = .loading(url)
+        ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
+    }
 }

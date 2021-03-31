@@ -8,14 +8,14 @@
 import SwiftUI
 struct MainView: View {
    // @ObservedObject var zone = ZoneList()
-    @StateObject var searchZone = SearchZoneViewModel(Zonelist())
+    @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
     
     var body: some View {
         NavigationView{
             VStack{
                 LogoImage()
                 NavigationLink(
-                    destination : TestView()
+                    destination : ZoneListView(searchZone: searchZone)
                 ){
                     Text("Search Zone")
                         .fontWeight(.semibold)
@@ -24,10 +24,6 @@ struct MainView: View {
                         .foregroundColor(.black)
                         .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(40)
-//                    Button(action:{print("Redirect page zone")}){
-//                                       ZoneButtom()
-//                                           .padding(.bottom,50)
-//                    }
                 }
                 Button(action:{print("Boutton cliqué")}){
                                    EditeurButtom()

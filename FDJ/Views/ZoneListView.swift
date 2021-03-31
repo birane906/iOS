@@ -11,13 +11,12 @@ struct ZoneListView: View {
     
     @ObservedObject var searchZone : SearchZoneViewModel
     var zoneintent : ZoneIntent
-    private var url : String = "http://localhost:8080/api/zone"
     
     init(searchZone : SearchZoneViewModel){
         self.searchZone = searchZone
         self.zoneintent = ZoneIntent(zonelist : searchZone)
         let _ = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
-        self.zoneintent.loadZone(url: url)
+        self.zoneintent.loadListZoneFromApi()
     }
     
     

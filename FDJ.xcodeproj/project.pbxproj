@@ -25,7 +25,6 @@
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
 		CC9E497126126CF8007B586F /* Zonelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497026126CF8007B586F /* Zonelist.swift */; };
 		CC9E49752614A34B007B586F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E49742614A34B007B586F /* MainView.swift */; };
-		CC9E497D2614A6A0007B586F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497C2614A6A0007B586F /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		CC8DD3B22600F08E0006DB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E497026126CF8007B586F /* Zonelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zonelist.swift; sourceTree = "<group>"; };
 		CC9E49742614A34B007B586F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		CC9E497C2614A6A0007B586F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +147,6 @@
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
 				CC9E49742614A34B007B586F /* MainView.swift */,
-				CC9E497C2614A6A0007B586F /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,7 +228,6 @@
 				CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */,
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
-				CC9E497D2614A6A0007B586F /* TestView.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
 				CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */,
 				CC9E49752614A34B007B586F /* MainView.swift in Sources */,
