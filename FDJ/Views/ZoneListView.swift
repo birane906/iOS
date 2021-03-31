@@ -17,6 +17,7 @@ struct ZoneListView: View {
         self.zoneintent = ZoneIntent(zonelist : searchZone)
         let _  = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
         if case .ready = self.searchZone.zoneListState {
+            print("Ready")
             self.zoneintent.loadListZoneFromApi()
         }
         print("Init zonelist")
@@ -51,7 +52,7 @@ struct ZoneListView: View {
                         NavigationLink(
                             destination: JeuView(zone: zone),
                             label: {
-                                /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
+                                Text("\(zone.name_zone)")
                             })
                     }
                 }

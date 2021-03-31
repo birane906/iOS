@@ -15,7 +15,7 @@ import SwiftUI
 //    private(set) var name_zone : String
 //}
 
-class Zone : ObservableObject,Identifiable,Encodable {
+class Zone : ObservableObject,Identifiable,Encodable,Decodable {
     
     private(set) var id_zone: Int
     private(set) var id_espace : Int
