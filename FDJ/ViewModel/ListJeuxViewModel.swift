@@ -70,39 +70,39 @@ class ListJeuxViewModel: JeuxlistDelegate,ObservableObject{
 
 
 @Published var jeuxAddingError : Bool = false{
-didSet{
-    if !jeuxAddingError{
-        jeuxListState = .ready
+    didSet{
+        if !jeuxAddingError{
+            jeuxListState = .ready
+        }
     }
 }
-}
 
-@Published var jeuxListState : SearchJeuxState = .ready{
-didSet{
-    #if DEBUG
-        debugPrint("SearchPlvm : state.didSet = \(jeuxListState)")
-    #endif
-    switch self.jeuxListState {
-    case let .loaded(data):
-        print(data)
-        self.model.new(jeux: data)
-        //zoneListState = .new(model)
-    case .loadingError:
-        print("error loading")
-    default:
-        return
+    @Published var jeuxListState : SearchJeuxState = .ready{
+        didSet{
+            #if DEBUG
+                debugPrint("SearchPlvm : state.didSet = \(jeuxListState)")
+            #endif
+            switch self.jeuxListState {
+            case let .loaded(data):
+                print(data)
+                self.model.new(jeux: data)
+                //zoneListState = .new(model)
+            case .loadingError:
+                print("error loading")
+            default:
+                return
+            }
+        }
     }
-}
-}
 
-func add(jeux: [Jeu]){
-   self.model.add(jeux: jeux)
-}
+    func add(jeux: [Jeu]){
+       self.model.add(jeux: jeux)
+    }
 
-init(_ jeuxlist : Jeuxlist) {
-self.model = jeuxlist
-self.model.delegate = self
-}
+    init(_ jeuxlist : Jeuxlist) {
+        self.model = jeuxlist
+        self.model.delegate = self
+    }
 
 }
 
