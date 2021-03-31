@@ -1,35 +1,14 @@
-//
-//  JeuView.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 28/03/2021.
-//
-
 import SwiftUI
 
-struct JeuView: View {
-    
-    var zone : ZoneViewModel
-    
-    init(zone:ZoneViewModel){
-        self.zone = zone
-    }
-    
+struct JeuListView: View {
+    var jeuList : JeuListViewModel
     var body: some View {
-        VStack{
-            Text("Liste de jeux ")
-//            List{
-//                ForEach(self.zone.jeux!){jeu in
-//                    NavigationLink(
-//                        destination : JeuDetailView(jeu:jeu),
-//                        label : {
-//                            Text("\(jeu.name_jeu)")
-//                        }
-//                    )
-//                }
-//            }
-        }
+        Text("Liste des jeux")
     }
 }
 
-
+struct JeuView_Previews: PreviewProvider {
+    static var previews: some View {
+        JeuListView()
+    }
+}
