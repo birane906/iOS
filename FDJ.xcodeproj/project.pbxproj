@@ -125,7 +125,6 @@
 				B701ECF42609EEF600D3D5A8 /* ViewModel */,
 				CC8DD3BF2603D29E0006DB23 /* Views */,
 				CC8DD3A92600F08C0006DB23 /* FDJApp.swift */,
-				CC8DD3AB2600F08C0006DB23 /* ContentView.swift */,
 				CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */,
 				CC8DD3B22600F08E0006DB23 /* Info.plist */,
 				CC8DD3AF2600F08E0006DB23 /* Preview Content */,
@@ -144,6 +143,7 @@
 		CC8DD3BF2603D29E0006DB23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC8DD3AB2600F08C0006DB23 /* ContentView.swift */,
 				CC718DC8260B974900F0C45F /* ZoneListView.swift */,
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,

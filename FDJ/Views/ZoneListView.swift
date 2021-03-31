@@ -15,8 +15,8 @@ struct ZoneListView: View {
     
     init(searchZone : SearchZoneViewModel){
         self.searchZone = searchZone
-        self.zoneintent = ZoneIntent(zone : searchZone)
-        let _ = self.searchZone.$searchZoneState.sink(receiveValue: stateChanged)
+        self.zoneintent = ZoneIntent(zonelist : searchZone)
+        let _ = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
         self.zoneintent.loadZone(url: url)
     }
     
@@ -25,7 +25,7 @@ struct ZoneListView: View {
         switch state {
         case let .loading(url):
             print("Loding: \(url)")
-        case .new:
+        case .newZones:
             print("Charging")
         default:
             return
@@ -34,11 +34,11 @@ struct ZoneListView: View {
     var body: some View{
         ZStack{
             VStack{
-                Text("Liste de zone :  \(searchZone.model.name_zone)")
+                Text("Liste de zone : ")
                     .font(.largeTitle)
                 Spacer()
                 List{
-                    ForEach(self.searchZone.model){zone in
+                    ForEach(self.searchZone.zones){zone in
                         NavigationLink(
                             destination: JeuView(zone: zone),
                             label: {

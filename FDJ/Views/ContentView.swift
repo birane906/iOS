@@ -7,16 +7,20 @@
 
 import SwiftUI
 struct ContentView: View {
-    //@ObservedObject var zone = ZoneList()
-
+   // @ObservedObject var zone = ZoneList()
+    @ObservedObject var searchZone = SearchZoneViewModel(Zonelist())
     
     var body: some View {
         ZStack{
             VStack{
                 LogoImage()
-                Button(action:{print("Boutton cliqué")}){
-                                   ZoneButtom()
-                                       .padding(.bottom,50)
+                NavigationLink(
+                    destination : ZoneListView(searchZone: searchZone)
+                ){
+                    Button(action:{print("Boutton cliqué")}){
+                                       ZoneButtom()
+                                           .padding(.bottom,50)
+                    }
                 }
                 Button(action:{print("Boutton cliqué")}){
                                    EditeurButtom()
@@ -77,8 +81,8 @@ struct JeuButtom: View {
             .cornerRadius(35.0)
     }
 }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(searchZone)
+//    }
+//}

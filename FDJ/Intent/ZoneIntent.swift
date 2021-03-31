@@ -10,7 +10,7 @@ import Foundation
 
 class ZoneIntent {
     
-    @ObservedObject var zonelist : SearchZoneViewModel
+    var zonelist : SearchZoneViewModel
     
     init(zonelist: SearchZoneViewModel) {
         self.zonelist = zonelist

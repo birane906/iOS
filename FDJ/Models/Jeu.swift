@@ -17,9 +17,9 @@ class Jeu : Decodable, Identifiable {
     public var nb_joueurs_min : Int
     public var nb_joueurs_max : Int
     public var agemin : Int
-    public var editeur : Editeur
+    public var editeurs : [Editeur]
     
-    init(id_jeu:Int,name_jeu:String,id_type:Int,libelle_type:String,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,editeur:Editeur){
+    init(id_jeu:Int,name_jeu:String,id_type:Int,libelle_type:String,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,editeurs:[Editeur]){
         self.id_jeu = id_jeu
         self.name_jeu = name_jeu
         self.id_type = id_type
@@ -28,7 +28,7 @@ class Jeu : Decodable, Identifiable {
         self.nb_joueurs_min = nb_joueurs_min
         self.nb_joueurs_max = nb_joueurs_max
         self.agemin = agemin
-        self.editeur = editeur
+        self.editeurs = editeurs
     }
 }
 
