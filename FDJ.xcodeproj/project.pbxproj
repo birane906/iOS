@@ -21,10 +21,11 @@
 		CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DF62610F5B700F0C45F /* JeuView.swift */; };
 		CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DFA2611096800F0C45F /* JeuDetailView.swift */; };
 		CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DD3A92600F08C0006DB23 /* FDJApp.swift */; };
-		CC8DD3AC2600F08C0006DB23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DD3AB2600F08C0006DB23 /* ContentView.swift */; };
 		CC8DD3AE2600F08E0006DB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */; };
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
 		CC9E497126126CF8007B586F /* Zonelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497026126CF8007B586F /* Zonelist.swift */; };
+		CC9E49752614A34B007B586F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E49742614A34B007B586F /* MainView.swift */; };
+		CC9E497D2614A6A0007B586F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497C2614A6A0007B586F /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,11 +44,12 @@
 		CC718DFA2611096800F0C45F /* JeuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuDetailView.swift; sourceTree = "<group>"; };
 		CC8DD3A62600F08C0006DB23 /* FDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8DD3A92600F08C0006DB23 /* FDJApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDJApp.swift; sourceTree = "<group>"; };
-		CC8DD3AB2600F08C0006DB23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC8DD3B22600F08E0006DB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E497026126CF8007B586F /* Zonelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zonelist.swift; sourceTree = "<group>"; };
+		CC9E49742614A34B007B586F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CC9E497C2614A6A0007B586F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +145,11 @@
 		CC8DD3BF2603D29E0006DB23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CC8DD3AB2600F08C0006DB23 /* ContentView.swift */,
 				CC718DC8260B974900F0C45F /* ZoneListView.swift */,
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
+				CC9E49742614A34B007B586F /* MainView.swift */,
+				CC9E497C2614A6A0007B586F /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC8DD3AC2600F08C0006DB23 /* ContentView.swift in Sources */,
 				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
 				CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */,
@@ -229,8 +231,10 @@
 				CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */,
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
+				CC9E497D2614A6A0007B586F /* TestView.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
 				CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */,
+				CC9E49752614A34B007B586F /* MainView.swift in Sources */,
 				CC718DC9260B974900F0C45F /* ZoneListView.swift in Sources */,
 				CC718DC1260B818200F0C45F /* Zone.swift in Sources */,
 				B701ECF92609EFE800D3D5A8 /* JeuIntent.swift in Sources */,

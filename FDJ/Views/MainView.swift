@@ -1,26 +1,33 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  FDJ
 //
-//  Created by Jingjing XIANG on 16/03/2021.
+//  Created by Jingjing XIANG on 31/03/2021.
 //
 
 import SwiftUI
-struct ContentView: View {
+struct MainView: View {
    // @ObservedObject var zone = ZoneList()
-    @ObservedObject var searchZone = SearchZoneViewModel(Zonelist())
+    @StateObject var searchZone = SearchZoneViewModel(Zonelist())
     
     var body: some View {
-        ZStack{
+        NavigationView{
             VStack{
                 LogoImage()
                 NavigationLink(
-                    destination : ZoneListView(searchZone: searchZone)
+                    destination : TestView()
                 ){
-                    Button(action:{print("Boutton cliqué")}){
-                                       ZoneButtom()
-                                           .padding(.bottom,50)
-                    }
+                    Text("Search Zone")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
+//                    Button(action:{print("Redirect page zone")}){
+//                                       ZoneButtom()
+//                                           .padding(.bottom,50)
+//                    }
                 }
                 Button(action:{print("Boutton cliqué")}){
                                    EditeurButtom()
@@ -31,7 +38,10 @@ struct ContentView: View {
                                        .padding(.bottom,50)
                 }
             }
+    
         }
+        
+            
     }
 
 }
@@ -81,8 +91,3 @@ struct JeuButtom: View {
             .cornerRadius(35.0)
     }
 }
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView(searchZone)
-//    }
-//}
