@@ -26,7 +26,11 @@ struct ZoneJeuxView: View {
             ZStack {
                 List {
                     ForEach(self.zoneJeux.jeux) { jeu in
-                        Text(jeu.name_jeu)
+                        NavigationLink(
+                            destination: JeuDetailView(jeu:jeu.model),
+                            label: {
+                                Text("\(jeu.name_jeu)")
+                            }).navigationViewStyle(StackNavigationViewStyle())
                     }
                 }
             }
