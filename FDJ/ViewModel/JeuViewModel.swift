@@ -11,7 +11,7 @@ import Foundation
 class JeuViewModel : Identifiable, ObservableObject,Equatable{
     
     let id = UUID()
-    private var model : Jeu
+    var model : Jeu
     
     static func == (lhs: JeuViewModel, rhs: JeuViewModel) -> Bool {
             return lhs.id == rhs.id
@@ -48,6 +48,10 @@ class JeuViewModel : Identifiable, ObservableObject,Equatable{
     
     var agemin : Int {
         return model.agemin
+    }
+    
+    var name_zone : String {
+        return model.name_zone
     }
     
     var editeurs : [Editeur] {

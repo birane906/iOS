@@ -74,7 +74,7 @@ struct JeuxListView: View {
                 List{
                     ForEach(self.searchJeux.jeux.filter(filterSearch)){jeu in
                         NavigationLink(
-                            destination: JeuDetailView(),
+                            destination: JeuDetailView(jeu:jeu.model),
                             label: {
                                 Text("\(jeu.name_jeu)")
                             }).navigationViewStyle(StackNavigationViewStyle())

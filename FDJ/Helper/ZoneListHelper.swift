@@ -16,6 +16,7 @@ struct JeuData : Codable {
     public var nb_joueurs_min : Int
     public var nb_joueurs_max : Int
     public var agemin : Int
+    public var name_zone : String
     public var editeurs : [EditeurData]
 }
 
@@ -48,7 +49,7 @@ struct ZoneListHelper {
         var jeux = [Jeu]()
         for jdata in data{
             let id: Int = jdata.id_jeu
-            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, editeurs: EditeurData2Editeur(data: jdata.editeurs))
+            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, name_zone : jdata.name_zone ,editeurs: EditeurData2Editeur(data: jdata.editeurs))
             jeux.append(jeu)
         }
         return jeux

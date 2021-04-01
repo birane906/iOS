@@ -54,7 +54,7 @@ struct JeuView: View {
             List{
                 ForEach(self.jeux){jeu in
                     NavigationLink(
-                        destination : JeuDetailView(),
+                        destination : JeuDetailView(jeu:jeu),
                         label : {
                             Text("\(jeu.name_jeu)")
                         }
