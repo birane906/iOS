@@ -1,11 +1,5 @@
-//
-//  JeuViewModel.swift
-//  FDJ
-//
-//  Created by etud on 23/03/2021.
-//
-
 import Foundation
+import SwiftUI
 
 class JeuViewModel : Identifiable, ObservableObject,Equatable{
     
@@ -16,11 +10,11 @@ class JeuViewModel : Identifiable, ObservableObject,Equatable{
             return lhs.id == rhs.id
     }
 
+    @ObservedObject private(set) var model : Jeu
     
     var id_jeu : Int {
         return model.id_jeu
     }
-    
     var name_jeu : String {
         return model.name_jeu
     }

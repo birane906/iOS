@@ -1,10 +1,3 @@
-//
-//  ZoneViewModel.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 27/03/2021.
-//
-
 import Foundation
 
 class ZoneViewModel: Identifiable, Equatable {

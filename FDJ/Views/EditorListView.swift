@@ -32,7 +32,7 @@ struct EditorListView: View {
                 }
             }
         }.onAppear(perform: {
-            self.intent.loadEditorList(surl: "http://176.136.177.203:18080/api/editeur")
+            self.intent.loadEditorList(surl: "http://localhost:8080/api/editeur")
         })
     }
 }

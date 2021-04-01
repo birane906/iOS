@@ -1,10 +1,3 @@
-//
-//  JeuView.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 28/03/2021.
-//
-
 import SwiftUI
 
 struct JeuView: View {
@@ -43,6 +36,7 @@ struct JeuView: View {
 //    }
     
     var jeux : [Jeu]
+    var jeuList : JeuListViewModel
 
     init(jeux:[Jeu]){
         self.jeux=jeux
@@ -62,7 +56,10 @@ struct JeuView: View {
                 }
             }
         }
-    }
 }
 
-
+struct JeuView_Previews: PreviewProvider {
+    static var previews: some View {
+        JeuListView(jeuList: JeuListViewModel(JeuList()))
+    }
+}

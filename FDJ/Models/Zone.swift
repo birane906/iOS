@@ -1,10 +1,3 @@
-//
-//  Zone.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 24/03/2021.
-//
-
 import Foundation
 import Combine
 import SwiftUI
@@ -36,6 +29,4 @@ class Zone : ObservableObject,Identifiable,Encodable,Decodable {
         self.jeux = zone.jeux!
     }
 }
-
-
 

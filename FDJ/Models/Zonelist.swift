@@ -1,10 +1,3 @@
-//
-//  Zonelist.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 29/03/2021.
-//
-
 import Foundation
 
 

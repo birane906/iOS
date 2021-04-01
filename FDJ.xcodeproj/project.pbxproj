@@ -14,6 +14,16 @@
 		B743C6C12615A83500F2476D /* EditorJeuxViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6C02615A83500F2476D /* EditorJeuxViewIntent.swift */; };
 		B743C6C42615A8C200F2476D /* EditorJeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6C32615A8C200F2476D /* EditorJeuxViewModel.swift */; };
 		B743C6C72615A93400F2476D /* EditorJeux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6C62615A93400F2476D /* EditorJeux.swift */; };
+		B743C6CB2615BCAA00F2476D /* JeuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6CA2615BCAA00F2476D /* JeuListViewModel.swift */; };
+		B743C6CE2615BCE800F2476D /* JeuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6CD2615BCE800F2476D /* JeuList.swift */; };
+		B743C6D12615BD5A00F2476D /* EditorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6D02615BD5A00F2476D /* EditorListViewModel.swift */; };
+		B743C6D42615BD7900F2476D /* EditorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6D32615BD7900F2476D /* EditorList.swift */; };
+		B743C6D72615BD8A00F2476D /* EditorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6D62615BD8A00F2476D /* EditorListView.swift */; };
+		B743C6DA2615BD9F00F2476D /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6D92615BD9E00F2476D /* Editor.swift */; };
+		B743C6DD2615BDAB00F2476D /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6DC2615BDAB00F2476D /* EditorViewModel.swift */; };
+		B743C6E02615BE1D00F2476D /* EditorListViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6DF2615BE1D00F2476D /* EditorListViewIntent.swift */; };
+		B743C6E32615BE7D00F2476D /* JeuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6E22615BE7D00F2476D /* JeuListView.swift */; };
+		B743C6E62615BEC100F2476D /* JeuListViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743C6E52615BEC100F2476D /* JeuListViewIntent.swift */; };
 		CC718DC1260B818200F0C45F /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DC0260B818200F0C45F /* Zone.swift */; };
 		CC718DC9260B974900F0C45F /* ZoneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DC8260B974900F0C45F /* ZoneListView.swift */; };
 		CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DD8260E9BD900F0C45F /* ApiHelper.swift */; };
@@ -53,6 +63,16 @@
 		B743C6C02615A83500F2476D /* EditorJeuxViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorJeuxViewIntent.swift; sourceTree = "<group>"; };
 		B743C6C32615A8C200F2476D /* EditorJeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorJeuxViewModel.swift; sourceTree = "<group>"; };
 		B743C6C62615A93400F2476D /* EditorJeux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorJeux.swift; sourceTree = "<group>"; };
+		B743C6CA2615BCAA00F2476D /* JeuListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JeuListViewModel.swift; sourceTree = "<group>"; };
+		B743C6CD2615BCE800F2476D /* JeuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JeuList.swift; sourceTree = "<group>"; };
+		B743C6D02615BD5A00F2476D /* EditorListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorListViewModel.swift; sourceTree = "<group>"; };
+		B743C6D32615BD7900F2476D /* EditorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorList.swift; sourceTree = "<group>"; };
+		B743C6D62615BD8A00F2476D /* EditorListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorListView.swift; sourceTree = "<group>"; };
+		B743C6D92615BD9E00F2476D /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
+		B743C6DC2615BDAB00F2476D /* EditorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
+		B743C6DF2615BE1D00F2476D /* EditorListViewIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorListViewIntent.swift; sourceTree = "<group>"; };
+		B743C6E22615BE7D00F2476D /* JeuListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JeuListView.swift; sourceTree = "<group>"; };
+		B743C6E52615BEC100F2476D /* JeuListViewIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JeuListViewIntent.swift; sourceTree = "<group>"; };
 		CC718DC0260B818200F0C45F /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Zone.swift; path = FDJ/Models/Zone.swift; sourceTree = SOURCE_ROOT; };
 		CC718DC8260B974900F0C45F /* ZoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneListView.swift; sourceTree = "<group>"; };
 		CC718DD8260E9BD900F0C45F /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
@@ -101,6 +121,9 @@
 		B701ECF42609EEF600D3D5A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B743C6DC2615BDAB00F2476D /* EditorViewModel.swift */,
+				B743C6D02615BD5A00F2476D /* EditorListViewModel.swift */,
+				B743C6CA2615BCAA00F2476D /* JeuListViewModel.swift */,
 				B701ED0D2609F12400D3D5A8 /* JeuViewModel.swift */,
 				CC718DDD260F97B700F0C45F /* ZoneViewModel.swift */,
 				CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */,
@@ -126,6 +149,8 @@
 		CC718DFD26112E5600F0C45F /* Intent */ = {
 			isa = PBXGroup;
 			children = (
+				B743C6E52615BEC100F2476D /* JeuListViewIntent.swift */,
+				B743C6DF2615BE1D00F2476D /* EditorListViewIntent.swift */,
 				CC718DE326109CE900F0C45F /* ZoneIntent.swift */,
 				B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */,
 				F35613B62614C4DE00D98E91 /* EditorListViewIntent.swift */,
@@ -138,6 +163,10 @@
 		CC718DFE26112E7000F0C45F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B743C6D92615BD9E00F2476D /* Editor.swift */,
+				B743C6D32615BD7900F2476D /* EditorList.swift */,
+				B743C6CD2615BCE800F2476D /* JeuList.swift */,
+				CC718DD2260C83FF00F0C45F /* Editeur.swift */,
 				CC718DC0260B818200F0C45F /* Zone.swift */,
 				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
 				CC9E497026126CF8007B586F /* Zonelist.swift */,
@@ -194,6 +223,8 @@
 		CC8DD3BF2603D29E0006DB23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B743C6E22615BE7D00F2476D /* JeuListView.swift */,
+				B743C6D62615BD8A00F2476D /* EditorListView.swift */,
 				CC718DC8260B974900F0C45F /* ZoneListView.swift */,
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
@@ -280,19 +311,26 @@
 				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
 				CC9E498626150F54007B586F /* JeuxList.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
+				B743C6DA2615BD9F00F2476D /* Editor.swift in Sources */,
+				B743C6DD2615BDAB00F2476D /* EditorViewModel.swift in Sources */,
+				B743C6D42615BD7900F2476D /* EditorList.swift in Sources */,
+				B743C6CB2615BCAA00F2476D /* JeuListViewModel.swift in Sources */,
 				CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */,
 				CC718DDE260F97B700F0C45F /* ZoneViewModel.swift in Sources */,
 				B743C6C42615A8C200F2476D /* EditorJeuxViewModel.swift in Sources */,
 				CC84C03B2615B6D300CC2BF3 /* ZoneJeuxIntent.swift in Sources */,
 				B701ED0E2609F12400D3D5A8 /* JeuViewModel.swift in Sources */,
+				B743C6D72615BD8A00F2476D /* EditorListView.swift in Sources */,
 				CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */,
 				F35613B42614C32800D98E91 /* Editeur.swift in Sources */,
+				B743C6E32615BE7D00F2476D /* JeuListView.swift in Sources */,
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				F35613AF2614BE6400D98E91 /* EditorViewModel.swift in Sources */,
 				F35613B72614C4DE00D98E91 /* EditorListViewIntent.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
 				CC9E498926152592007B586F /* JeuxListHelper.swift in Sources */,
 				CC84C03E2615B82200CC2BF3 /* ZoneJeuxViewModel.swift in Sources */,
+				B743C6E02615BE1D00F2476D /* EditorListViewIntent.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
 				CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */,
 				CC84C0442615BB0600CC2BF3 /* ZoneJeuxView.swift in Sources */,
@@ -310,6 +348,10 @@
 				B743C6C12615A83500F2476D /* EditorJeuxViewIntent.swift in Sources */,
 				CC718DE426109CE900F0C45F /* ZoneIntent.swift in Sources */,
 				F35613A82614B9F700D98E91 /* Editor.swift in Sources */,
+				B743C6D12615BD5A00F2476D /* EditorListViewModel.swift in Sources */,
+				B743C6CE2615BCE800F2476D /* JeuList.swift in Sources */,
+				CC718DE426109CE900F0C45F /* ZoneIntent.swift in Sources */,
+				B743C6E62615BEC100F2476D /* JeuListViewIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

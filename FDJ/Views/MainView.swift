@@ -1,10 +1,3 @@
-//
-//  MainView.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 31/03/2021.
-//
-
 import SwiftUI
 
 struct MainView: View {
@@ -33,15 +26,9 @@ struct MainView: View {
                     EditeurButtom()
                 }
                 NavigationLink(
-                    destination : JeuxListView(searchJeux: searchJeux)
+                    destination: JeuListView(jeuList: jeuList)
                 ){
-                    Text("Search Jeux")
-                        .fontWeight(.semibold)
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
+                    JeuButtom()
                 }
             }
     
