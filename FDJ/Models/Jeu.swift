@@ -14,9 +14,11 @@ class Jeu : Identifiable, ObservableObject, Encodable, Equatable, Decodable {
     
     private(set) var id_jeu: Int
     private(set) var name_jeu: String
+    private(set) var nb_joueurs_min: Int
     
-    init(id_jeu: Int, name_jeu: String) {
+    init(id_jeu: Int, name_jeu: String, nb_joueurs_min: Int) {
         self.id_jeu = id_jeu
         self.name_jeu = name_jeu
+        self.nb_joueurs_min = nb_joueurs_min
     }
 }

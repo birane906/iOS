@@ -6,7 +6,7 @@ struct JeuListView: View {
     
     init(jeuList: JeuListViewModel) {
         self.jeuList = jeuList
-        self.intent = jeuListViewIntent(jeuList: JeuList)
+        self.intent = JeuListViewIntent(jeuList: jeuList)
         
     }
     

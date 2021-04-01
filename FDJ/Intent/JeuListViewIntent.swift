@@ -2,13 +2,13 @@ import Foundation
 import SwiftUI
 
 class JeuListViewIntent {
-    @ObservedObject var jeuList : jeuListViewModel
+    @ObservedObject var jeuList : JeuListViewModel
     
-    init(jeuList: jeuListViewModel) {
+    init(jeuList: JeuListViewModel) {
         self.jeuList = jeuList
     }
     
-    func loadeuList(surl: String) {
+    func loadJeuList(surl: String) {
         guard let url = URL(string: surl) else {
             return
         }
@@ -16,7 +16,7 @@ class JeuListViewIntent {
         ApiHelper.getJsonData(from: url, endofrequest: httpJsonLoaded)
     }
     
-    func httpJsonLoaded(result: Result<[jeu], HttpRequestError>){
+    func httpJsonLoaded(result: Result<[Jeu], HttpRequestError>){
         switch result{
         case let .success(data):
             print("success : \(data)")

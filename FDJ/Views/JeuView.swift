@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct JeuListView: View {
+struct JeuView: View {
     var jeuList : JeuListViewModel
     var body: some View {
         Text("Liste des jeux")
@@ -9,6 +9,6 @@ struct JeuListView: View {
 
 struct JeuView_Previews: PreviewProvider {
     static var previews: some View {
-        JeuListView()
+        JeuListView(jeuList: JeuListViewModel(JeuList()))
     }
 }

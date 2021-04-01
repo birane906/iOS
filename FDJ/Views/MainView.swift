@@ -3,6 +3,7 @@ struct MainView: View {
    // @ObservedObject var zone = ZoneList()
 //    @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
     @StateObject var editorList: EditorListViewModel = EditorListViewModel(EditorList())
+    @StateObject var jeuList: JeuListViewModel = JeuListViewModel(JeuList())
     var body: some View {
         NavigationView{
             VStack{
@@ -23,9 +24,10 @@ struct MainView: View {
                 ){
                     EditeurButtom()
                 }
-                Button(action:{print("Boutton cliqué")}){
-                                   JeuButtom()
-                                       .padding(.bottom,50)
+                NavigationLink(
+                    destination: JeuListView(jeuList: jeuList)
+                ){
+                    JeuButtom()
                 }
             }
     

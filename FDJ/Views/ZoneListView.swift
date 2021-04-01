@@ -39,7 +39,7 @@ struct ZoneListView: View {
                 List{
                     ForEach(self.searchZone.zones){zone in
                         NavigationLink(
-                            destination: JeuView(zone: zone),
+                            destination: Text("nowhere"),
                             label: {
                                 /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
                             })
