@@ -27,6 +27,9 @@ class ZoneViewModel: Identifiable, Equatable {
         return model.name_zone
     }
     
+    var jeux : [Jeu]{
+        return model.jeux ?? []
+    }
     
     init(_ zone: Zone){
         self.model = zone

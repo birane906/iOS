@@ -51,7 +51,7 @@ class JeuViewModel : Identifiable, ObservableObject,Equatable{
     }
     
     var editeurs : [Editeur] {
-        return model.editeurs
+        return model.editeurs ?? []
     }
     
     init(_ jeu : Jeu) {

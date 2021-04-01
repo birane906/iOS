@@ -9,16 +9,17 @@ import SwiftUI
 
 struct JeuDetailView: View {
     
-    var jeu : Jeu
-    
-    init(jeu : Jeu){
-        self.jeu = jeu
-    }
+//    var jeu : Jeu
+//    
+//    init(jeu : Jeu){
+//        self.jeu = jeu
+//    }
     
     var body: some View {
         VStack {
-            Text("Jeu : \(jeu.name_jeu)")
-            Text("Nombre joueur min : \(jeu.nb_joueurs_min)")
+//            Text("Jeu : \(jeu.name_jeu)")
+//            Text("Nombre joueur min : \(jeu.nb_joueurs_min)")
+            Text("Test")
         }
     }
 }

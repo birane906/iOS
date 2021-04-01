@@ -20,6 +20,7 @@
 		CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */; };
 		CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DF62610F5B700F0C45F /* JeuView.swift */; };
 		CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DFA2611096800F0C45F /* JeuDetailView.swift */; };
+		CC84C0382615A65300CC2BF3 /* JeuxListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C0372615A65300CC2BF3 /* JeuxListView.swift */; };
 		CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DD3A92600F08C0006DB23 /* FDJApp.swift */; };
 		CC8DD3AE2600F08E0006DB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */; };
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		CC9E49752614A34B007B586F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E49742614A34B007B586F /* MainView.swift */; };
 		CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498226150690007B586F /* ListJeuxViewModel.swift */; };
 		CC9E498626150F54007B586F /* JeuxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498526150F54007B586F /* JeuxList.swift */; };
+		CC9E498926152592007B586F /* JeuxListHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498826152592007B586F /* JeuxListHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchZoneViewModel.swift; sourceTree = "<group>"; };
 		CC718DF62610F5B700F0C45F /* JeuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuView.swift; sourceTree = "<group>"; };
 		CC718DFA2611096800F0C45F /* JeuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuDetailView.swift; sourceTree = "<group>"; };
+		CC84C0372615A65300CC2BF3 /* JeuxListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxListView.swift; sourceTree = "<group>"; };
 		CC8DD3A62600F08C0006DB23 /* FDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8DD3A92600F08C0006DB23 /* FDJApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDJApp.swift; sourceTree = "<group>"; };
 		CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		CC9E49742614A34B007B586F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CC9E498226150690007B586F /* ListJeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJeuxViewModel.swift; sourceTree = "<group>"; };
 		CC9E498526150F54007B586F /* JeuxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxList.swift; sourceTree = "<group>"; };
+		CC9E498826152592007B586F /* JeuxListHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxListHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			children = (
 				CC718DD8260E9BD900F0C45F /* ApiHelper.swift */,
 				CC718DE0260F9E7A00F0C45F /* ZoneListHelper.swift */,
+				CC9E498826152592007B586F /* JeuxListHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
 				CC9E49742614A34B007B586F /* MainView.swift */,
+				CC84C0372615A65300CC2BF3 /* JeuxListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC84C0382615A65300CC2BF3 /* JeuxListView.swift in Sources */,
 				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
 				CC9E498626150F54007B586F /* JeuxList.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
@@ -235,6 +242,7 @@
 				CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */,
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
+				CC9E498926152592007B586F /* JeuxListHelper.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
 				CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */,
 				CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */,

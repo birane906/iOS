@@ -1,56 +1,56 @@
 //
-//  ZoneListView.swift
+//  JeuxListView.swift
 //  FDJ
 //
-//  Created by Jingjing XIANG on 24/03/2021.
+//  Created by Jingjing XIANG on 01/04/2021.
 //
 
 import SwiftUI
 
-struct ZoneListView: View {
+struct JeuxListView: View {
     
-    @ObservedObject var searchZone : SearchZoneViewModel
-    var zoneintent : ZoneIntent
+    @ObservedObject var searchJeux : ListJeuxViewModel
+    var jeuintent : JeuIntent
     
     @State private var textfield: String = ""
 
     @State private var isSaisie = false
-    
-    func filterSearch(zone: ZoneViewModel) -> Bool {
-            
+
+    func filterSearch(jeu: JeuViewModel) -> Bool {
+
             var res: Bool = true
-            
+
             if (!textfield.isEmpty) {
-                res = zone.name_zone.lowercased().contains(textfield.lowercased())
+                res = jeu.name_jeu.lowercased().contains(textfield.lowercased())
             }
-                    
+
             return res
     }
     
-    init(searchZone : SearchZoneViewModel){
-        self.searchZone = searchZone
-        self.zoneintent = ZoneIntent(zonelist : searchZone)
-        let _  = self.searchZone.$zoneListState.sink(receiveValue: stateChanged)
-        if case .ready = self.searchZone.zoneListState {
+    init(searchJeux : ListJeuxViewModel){
+        self.searchJeux = searchJeux
+        self.jeuintent = JeuIntent(jeuxlist : searchJeux)
+        let _  = self.searchJeux.$jeuxListState.sink(receiveValue: stateChanged)
+        if case .ready = self.searchJeux.jeuxListState {
             print("Ready")
-            self.zoneintent.loadListZoneFromApi()
+            self.jeuintent.loadListJeuxFromApi()
         }
-        print("Init zonelist")
+        print("Init jeuxlist")
     }
     
-    private var searchState : SearchZoneState{
-        return self.searchZone.zoneListState
+    private var searchState : SearchJeuxState{
+        return self.searchJeux.jeuxListState
     }
     
-    var zones : [ZoneViewModel] {
-        return self.searchZone.zones
+    var jeux : [JeuViewModel] {
+        return self.searchJeux.jeux
     }
     
-    func stateChanged(state : SearchZoneState){
+    func stateChanged(state : SearchJeuxState){
         switch state {
         case let .loading(url):
             print("Loding: \(url)")
-        case .newZones:
+        case .newJeux:
             print("Charging")
         default:
             return
@@ -59,7 +59,7 @@ struct ZoneListView: View {
     var body: some View{
         ZStack{
             VStack{
-                Text("Liste de zone : ")
+                Text("Liste de jeux : ")
                     .font(.largeTitle)
                 TextField("Chercher un zone", text: $textfield)
                                         .padding(7)
@@ -72,11 +72,11 @@ struct ZoneListView: View {
                                         }
                 Spacer()
                 List{
-                    ForEach(self.searchZone.zones.filter(filterSearch)){zone in
+                    ForEach(self.searchJeux.jeux.filter(filterSearch)){jeu in
                         NavigationLink(
-                            destination: JeuView(jeux: zone.jeux),
+                            destination: JeuDetailView(),
                             label: {
-                                Text("\(zone.name_zone)")
+                                Text("\(jeu.name_jeu)")
                             }).navigationViewStyle(StackNavigationViewStyle())
                     }
                 }
@@ -85,5 +85,4 @@ struct ZoneListView: View {
     }
     
 }
-
 

@@ -88,13 +88,73 @@ struct ZoneListHelper {
         self.loadZonesFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
     }
     
+    static func loadJeuxFromAPI(url surl: String, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+        guard let url = URL(string: surl) else {
+            endofrequest(.failure(.badURL(surl)))
+            return
+        }
+        self.loadJeuxFromAPI(url: url, endofrequest: endofrequest)
+    }
+    
+    
+    static func loadJeuxFromAPI(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+        self.loadJeuxFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
+    }
+    
+    
     // todo
     private static func loadEditeursFromJsonData(url: URL, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
         
     }
     
     private static func loadJeuxFromJsonData(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
-        
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decodedData : Decodable?
+             
+                decodedData = try? JSONDecoder().decode(JeuData.self, from: data)
+                
+                guard let decodedResponse = decodedData else {
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                var jeuxData : [JeuData]
+               
+                jeuxData = (decodedResponse as! [JeuData])
+                
+                guard let jeux = self.JeuData2Jeu(data: jeuxData) else{
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    endofrequest(.success(jeux))
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    if let error = error {
+                        guard let error = error as? URLError else {
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        endofrequest(.failure(.failingURL(error)))
+                    }
+                    else{
+                        guard let response = response as? HTTPURLResponse else{
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        guard response.statusCode == 200 else {
+                            endofrequest(.failure(.requestFailed))
+                            return
+                        }
+                        endofrequest(.failure(.unknown))
+                    }
+                }
+            }
+        }.resume()
     }
     
     private static func loadZonesFromJsonData(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
