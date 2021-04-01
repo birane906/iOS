@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct ColorManager {
+    static let fjmgreen =
+        Color("Greenfjm")
+    static let fjmblue = Color("Bluefjm")
+}
+
 struct ZoneJeuxView: View {
     @ObservedObject var zoneJeux: ZoneJeuxViewModel
     var intent : ZoneJeuxViewIntent
@@ -20,13 +26,44 @@ struct ZoneJeuxView: View {
         
     }
     
+    @State private var textfield: String = ""
+
+    @State private var isSaisie = false
+    
+    func filterSearch(jeu: JeuViewModel) -> Bool {
+            
+            var res: Bool = true
+            
+            if (!textfield.isEmpty) {
+                res = jeu.name_jeu.lowercased().contains(textfield.lowercased())
+            }
+                    
+            return res
+    }
+    
     var body: some View {
         VStack {
             Text("Liste des jeux")
+                .font(.largeTitle)
+                .foregroundColor(ColorManager.fjmblue)
+            TextField("Chercher un jeu", text: $textfield)
+                                    .padding(7)
+                                    .padding(.horizontal, 25)
+                                    .background(Color(.systemGray6))
+                                    .cornerRadius(8)
+                                    .padding(.horizontal, 10)
+                                    .onTapGesture {
+                                        self.isSaisie = true
+                                    }
+            
             ZStack {
                 List {
-                    ForEach(self.zoneJeux.jeux) { jeu in
-                        Text(jeu.name_jeu)
+                    ForEach(self.zoneJeux.jeux.filter(filterSearch)) { jeu in
+                        NavigationLink(
+                            destination: JeuDetailView(jeu:jeu.model),
+                            label: {
+                                Text("\(jeu.name_jeu)")
+                            }).navigationViewStyle(StackNavigationViewStyle())
                     }
                 }
             }

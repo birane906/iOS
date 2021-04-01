@@ -41,7 +41,7 @@ class JeuViewModel : Identifiable, ObservableObject,Equatable{
     }
     
     var name_zone : String {
-        return model.name_zone
+        return model.name_zone ?? ""
     }
     
     var editeurs : [Editeur] {

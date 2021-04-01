@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ZoneListView: View {
     
+    struct ColorManager {
+        static let fjmgreen =
+            Color("Greenfjm")
+        static let fjmblue = Color("Bluefjm")
+    }
+    
     @ObservedObject var searchZone : SearchZoneViewModel
     @StateObject var searchJeux : ListJeuxViewModel = ListJeuxViewModel(Jeuxlist())
     
@@ -61,8 +67,9 @@ struct ZoneListView: View {
     var body: some View{
         ZStack{
             VStack{
-                Text("Liste de zone : ")
+                Text("Liste de zone ")
                     .font(.largeTitle)
+                    .foregroundColor(ColorManager.fjmblue)
                 TextField("Chercher un zone", text: $textfield)
                                         .padding(7)
                                         .padding(.horizontal, 25)
@@ -87,5 +94,3 @@ struct ZoneListView: View {
     }
     
 }
-
-

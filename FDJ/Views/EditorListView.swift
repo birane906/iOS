@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct EditorListView: View {
+    
+    struct ColorManager {
+        static let fjmgreen =
+            Color("Greenfjm")
+        static let fjmblue = Color("Bluefjm")
+    }
+    
     @ObservedObject var editorList: EditorListViewModel
     var intent : EditorListViewIntent
     
@@ -17,12 +24,39 @@ struct EditorListView: View {
         
     }
     
+    @State private var textfield: String = ""
+
+    @State private var isSaisie = false
+    
+    func filterSearch(editeur: EditorViewModel) -> Bool {
+            
+            var res: Bool = true
+            
+            if (!textfield.isEmpty) {
+                res = editeur.nom_editeur.lowercased().contains(textfield.lowercased())
+            }
+                    
+            return res
+    }
+    
     var body: some View {
         VStack {
             Text("Liste des éditeurs")
+                .font(.largeTitle)
+                .foregroundColor(ColorManager.fjmblue)
+            TextField("Chercher un éditeur", text: $textfield)
+                                    .padding(7)
+                                    .padding(.horizontal, 25)
+                                    .background(Color(.systemGray6))
+                                    .cornerRadius(8)
+                                    .padding(.horizontal, 10)
+                                    .onTapGesture {
+                                        self.isSaisie = true
+                                    }
+            Spacer()
             ZStack {
                 List {
-                    ForEach(self.editorList.editors) { editor in
+                    ForEach(self.editorList.editors.filter(filterSearch)) { editor in
                         NavigationLink(
                             destination: EditorJeuxView(editorJeux: EditorJeuxViewModel(EditorJeux()), id_editor: editor.id_editeur),
                             label: {

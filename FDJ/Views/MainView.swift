@@ -1,6 +1,13 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    struct ColorManager {
+        static let fjmgreen =
+            Color("Greenfjm")
+        static let fjmblue = Color("Bluefjm")
+    }
+    
     @StateObject var editorList: EditorListViewModel = EditorListViewModel(EditorList())
     @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
     @StateObject var searchJeux : JeuListViewModel = JeuListViewModel(JeuList())
@@ -8,33 +15,51 @@ struct MainView: View {
     var body: some View {
         NavigationView{
             VStack{
-                LogoImage()
-                NavigationLink(
-                    destination : ZoneListView(searchZone: searchZone)
-                ){
-                    Text("Search Zone")
-                        .fontWeight(.semibold)
-                        .font(.title)
+                ZStack{
+                    LogoImage()
+                }
+                ZStack{
+                    Text("Bienvenu dans le festival du jeu 2020")
                         .padding()
-                        .foregroundColor(.black)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(40)
+                        .font(.system(size: 22, weight: .bold, design: .default))
+                        .foregroundColor(ColorManager.fjmblue)
                 }
-                NavigationLink(
-                    destination: EditorListView(editorList: editorList)
-                ){
-                    EditeurButtom()
+                Text("Recherche une zone")
+                    .padding()
+                    .font(.system(size: 19, weight: .light, design: .default))
+                    .foregroundColor(ColorManager.fjmgreen)
+                ZStack{
+                    NavigationLink(
+                        destination : ZoneListView(searchZone: searchZone)
+                    ){
+                        ZoneButtom()
+                    }
                 }
-                NavigationLink(
-                    destination: JeuListView(jeuList: searchJeux)
-                ){
-                    JeuButtom()
+                Text("Recherche un editeur")
+                    .padding()
+                    .font(.system(size: 19, weight: .light, design: .default))
+                    .foregroundColor(ColorManager.fjmgreen)
+                ZStack{
+                    NavigationLink(
+                        destination: EditorListView(editorList: editorList)
+                    ){
+                        EditeurButtom()
+                    }
+                }
+                Text("Recherche un jeu")
+                    .padding()
+                    .font(.system(size: 19, weight: .light, design: .default))
+                    .foregroundColor(ColorManager.fjmgreen)
+                ZStack{
+                    NavigationLink(
+                        destination: JeuListView(jeuList: searchJeux)
+                    ){
+                        JeuButtom()
+                    }
                 }
             }
     
         }
-        
-            
     }
 
 }
@@ -55,8 +80,8 @@ struct ZoneButtom: View {
             .font(.headline)
             .foregroundColor(.white)
             .padding()
-            .frame(width: 180, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(Color.black)
+            .frame(width: 180, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.blue)
             .cornerRadius(35.0)
     }
 }
@@ -67,8 +92,8 @@ struct EditeurButtom: View {
             .font(.headline)
             .foregroundColor(.white)
             .padding()
-            .frame(width: 180, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(Color.black)
+            .frame(width: 180, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.blue)
             .cornerRadius(35.0)
     }
 }
@@ -79,8 +104,8 @@ struct JeuButtom: View {
             .font(.headline)
             .foregroundColor(.white)
             .padding()
-            .frame(width: 180, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(Color.black)
+            .frame(width: 180, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.blue)
             .cornerRadius(35.0)
     }
 }
