@@ -20,11 +20,19 @@
 		CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */; };
 		CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DF62610F5B700F0C45F /* JeuView.swift */; };
 		CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC718DFA2611096800F0C45F /* JeuDetailView.swift */; };
+		CC84C0382615A65300CC2BF3 /* JeuxListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C0372615A65300CC2BF3 /* JeuxListView.swift */; };
+		CC84C03B2615B6D300CC2BF3 /* ZoneJeuxIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C03A2615B6D300CC2BF3 /* ZoneJeuxIntent.swift */; };
+		CC84C03E2615B82200CC2BF3 /* ZoneJeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C03D2615B82200CC2BF3 /* ZoneJeuxViewModel.swift */; };
+		CC84C0412615B8F800CC2BF3 /* ZoneJeux.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C0402615B8F800CC2BF3 /* ZoneJeux.swift */; };
+		CC84C0442615BB0600CC2BF3 /* ZoneJeuxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84C0432615BB0600CC2BF3 /* ZoneJeuxView.swift */; };
 		CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DD3A92600F08C0006DB23 /* FDJApp.swift */; };
 		CC8DD3AE2600F08E0006DB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */; };
 		CC8DD3B12600F08E0006DB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8DD3B02600F08E0006DB23 /* Preview Assets.xcassets */; };
 		CC9E497126126CF8007B586F /* Zonelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E497026126CF8007B586F /* Zonelist.swift */; };
 		CC9E49752614A34B007B586F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E49742614A34B007B586F /* MainView.swift */; };
+		CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498226150690007B586F /* ListJeuxViewModel.swift */; };
+		CC9E498626150F54007B586F /* JeuxList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498526150F54007B586F /* JeuxList.swift */; };
+		CC9E498926152592007B586F /* JeuxListHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E498826152592007B586F /* JeuxListHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +49,11 @@
 		CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchZoneViewModel.swift; sourceTree = "<group>"; };
 		CC718DF62610F5B700F0C45F /* JeuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuView.swift; sourceTree = "<group>"; };
 		CC718DFA2611096800F0C45F /* JeuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuDetailView.swift; sourceTree = "<group>"; };
+		CC84C0372615A65300CC2BF3 /* JeuxListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxListView.swift; sourceTree = "<group>"; };
+		CC84C03A2615B6D300CC2BF3 /* ZoneJeuxIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneJeuxIntent.swift; sourceTree = "<group>"; };
+		CC84C03D2615B82200CC2BF3 /* ZoneJeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneJeuxViewModel.swift; sourceTree = "<group>"; };
+		CC84C0402615B8F800CC2BF3 /* ZoneJeux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneJeux.swift; sourceTree = "<group>"; };
+		CC84C0432615BB0600CC2BF3 /* ZoneJeuxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneJeuxView.swift; sourceTree = "<group>"; };
 		CC8DD3A62600F08C0006DB23 /* FDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8DD3A92600F08C0006DB23 /* FDJApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDJApp.swift; sourceTree = "<group>"; };
 		CC8DD3AD2600F08E0006DB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +61,9 @@
 		CC8DD3B22600F08E0006DB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E497026126CF8007B586F /* Zonelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zonelist.swift; sourceTree = "<group>"; };
 		CC9E49742614A34B007B586F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CC9E498226150690007B586F /* ListJeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJeuxViewModel.swift; sourceTree = "<group>"; };
+		CC9E498526150F54007B586F /* JeuxList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxList.swift; sourceTree = "<group>"; };
+		CC9E498826152592007B586F /* JeuxListHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxListHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +83,8 @@
 				B701ED0D2609F12400D3D5A8 /* JeuViewModel.swift */,
 				CC718DDD260F97B700F0C45F /* ZoneViewModel.swift */,
 				CC718DE92610AA4A00F0C45F /* SearchZoneViewModel.swift */,
+				CC9E498226150690007B586F /* ListJeuxViewModel.swift */,
+				CC84C03D2615B82200CC2BF3 /* ZoneJeuxViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -76,6 +94,7 @@
 			children = (
 				CC718DD8260E9BD900F0C45F /* ApiHelper.swift */,
 				CC718DE0260F9E7A00F0C45F /* ZoneListHelper.swift */,
+				CC9E498826152592007B586F /* JeuxListHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -85,6 +104,7 @@
 			children = (
 				CC718DE326109CE900F0C45F /* ZoneIntent.swift */,
 				B701ECF82609EFE800D3D5A8 /* JeuIntent.swift */,
+				CC84C03A2615B6D300CC2BF3 /* ZoneJeuxIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -96,6 +116,8 @@
 				CC718DC0260B818200F0C45F /* Zone.swift */,
 				B701ECF52609EF2B00D3D5A8 /* Jeu.swift */,
 				CC9E497026126CF8007B586F /* Zonelist.swift */,
+				CC9E498526150F54007B586F /* JeuxList.swift */,
+				CC84C0402615B8F800CC2BF3 /* ZoneJeux.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +169,8 @@
 				CC718DF62610F5B700F0C45F /* JeuView.swift */,
 				CC718DFA2611096800F0C45F /* JeuDetailView.swift */,
 				CC9E49742614A34B007B586F /* MainView.swift */,
+				CC84C0372615A65300CC2BF3 /* JeuxListView.swift */,
+				CC84C0432615BB0600CC2BF3 /* ZoneJeuxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,15 +244,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC84C0412615B8F800CC2BF3 /* ZoneJeux.swift in Sources */,
+				CC84C0382615A65300CC2BF3 /* JeuxListView.swift in Sources */,
 				CC9E497126126CF8007B586F /* Zonelist.swift in Sources */,
+				CC9E498626150F54007B586F /* JeuxList.swift in Sources */,
 				CC718DE1260F9E7A00F0C45F /* ZoneListHelper.swift in Sources */,
 				CC718DEA2610AA4A00F0C45F /* SearchZoneViewModel.swift in Sources */,
 				CC718DDE260F97B700F0C45F /* ZoneViewModel.swift in Sources */,
+				CC84C03B2615B6D300CC2BF3 /* ZoneJeuxIntent.swift in Sources */,
 				B701ED0E2609F12400D3D5A8 /* JeuViewModel.swift in Sources */,
 				CC8DD3AA2600F08C0006DB23 /* FDJApp.swift in Sources */,
 				CC718DD9260E9BD900F0C45F /* ApiHelper.swift in Sources */,
 				CC718DD3260C83FF00F0C45F /* Editeur.swift in Sources */,
+				CC9E498926152592007B586F /* JeuxListHelper.swift in Sources */,
+				CC84C03E2615B82200CC2BF3 /* ZoneJeuxViewModel.swift in Sources */,
 				CC718DFB2611096800F0C45F /* JeuDetailView.swift in Sources */,
+				CC9E498326150690007B586F /* ListJeuxViewModel.swift in Sources */,
+				CC84C0442615BB0600CC2BF3 /* ZoneJeuxView.swift in Sources */,
 				CC718DF72610F5B700F0C45F /* JeuView.swift in Sources */,
 				CC9E49752614A34B007B586F /* MainView.swift in Sources */,
 				CC718DC9260B974900F0C45F /* ZoneListView.swift in Sources */,

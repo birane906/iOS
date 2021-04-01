@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+
 struct MainView: View {
    // @ObservedObject var zone = ZoneList()
     @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
+    @StateObject var searchJeux : ListJeuxViewModel = ListJeuxViewModel(Jeuxlist())
     
     var body: some View {
         NavigationView{
@@ -29,9 +31,16 @@ struct MainView: View {
                                    EditeurButtom()
                                        .padding(.bottom,50)
                 }
-                Button(action:{print("Boutton cliqué")}){
-                                   JeuButtom()
-                                       .padding(.bottom,50)
+                NavigationLink(
+                    destination : JeuxListView(searchJeux: searchJeux)
+                ){
+                    Text("Search Jeux")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
                 }
             }
     
