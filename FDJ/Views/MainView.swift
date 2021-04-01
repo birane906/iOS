@@ -3,14 +3,14 @@ import SwiftUI
 struct MainView: View {
     @StateObject var editorList: EditorListViewModel = EditorListViewModel(EditorList())
     @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
-    @StateObject var searchJeux : ListJeuxViewModel = ListJeuxViewModel(Jeuxlist())
+    @StateObject var searchJeux : JeuListViewModel = JeuListViewModel(JeuList())
     
     var body: some View {
         NavigationView{
             VStack{
                 LogoImage()
                 NavigationLink(
-                    destination : Text("Nowhere")
+                    destination : ZoneListView(searchZone: searchZone)
                 ){
                     Text("Search Zone")
                         .fontWeight(.semibold)
@@ -26,7 +26,7 @@ struct MainView: View {
                     EditeurButtom()
                 }
                 NavigationLink(
-                    destination: JeuListView(jeuList: jeuList)
+                    destination: JeuListView(jeuList: searchJeux)
                 ){
                     JeuButtom()
                 }

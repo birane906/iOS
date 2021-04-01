@@ -30,7 +30,7 @@ struct EditorJeuxView: View {
                 }
             }
         }.onAppear(perform: {
-            self.intent.loadEditorJeux(surl: "http://localhost:8080/api/listjeu?id_editeur=" + String(id_editor))
+            self.intent.loadEditorJeux(surl: "http://localhost:8080/api/jeu?id_editeur=" + String(id_editor))
         })
     }
 }

@@ -36,7 +36,7 @@ struct ZoneJeuxView: View {
     }
 }
 
-struct EditorJeuxView_Previews: PreviewProvider {
+struct ZoneJeuxView_Previews: PreviewProvider {
     static var previews: some View {
         ZoneJeuxView(zoneJeux: ZoneJeuxViewModel(ZoneJeux()), id_zone: 1)
     }

@@ -3,9 +3,6 @@ import SwiftUI
 
 class JeuViewModel : Identifiable, ObservableObject,Equatable{
     
-    let id = UUID()
-    var model : Jeu
-    
     static func == (lhs: JeuViewModel, rhs: JeuViewModel) -> Bool {
             return lhs.id == rhs.id
     }

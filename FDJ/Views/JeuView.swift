@@ -1,54 +1,21 @@
 import SwiftUI
 
 struct JeuView: View {
-    
-//    @ObservedObject var searchJeux : ListJeuxViewModel
-//    var jeuintent : JeuIntent
-//
-//    init(searchJeux : ListJeuxViewModel){
-//        self.searchJeux = searchJeux
-//        self.jeuintent = JeuIntent(jeuxlist : searchJeux)
-//        let _  = self.searchJeux.$jeuxListState.sink(receiveValue: stateChanged)
-//        if case .ready = self.searchJeux.jeuxListState {
-//            print("Ready")
-//            self.jeuintent.loadListJeuxFromApi()
-//        }
-//        print("Init zonelist")
-//    }
-//
-//    private var searchState : SearchJeuxState{
-//        return self.searchJeux.jeuxListState
-//    }
-//
-//    var jeux : [JeuViewModel] {
-//        return self.searchJeux.jeux
-//    }
-//
-//    func stateChanged(state : SearchJeuxState){
-//        switch state {
-//        case let .loading(url):
-//            print("Loding: \(url)")
-//        case .newJeux:
-//            print("Charging")
-//        default:
-//            return
-//        }
-//    }
-    
-    var jeux : [Jeu]
-    var jeuList : JeuListViewModel
+    @ObservedObject var jeuList : JeuListViewModel
+    var intent : JeuListViewIntent
 
-    init(jeux:[Jeu]){
-        self.jeux=jeux
+    init(jeuList : JeuListViewModel){
+        self.jeuList = jeuList
+        self.intent = JeuListViewIntent(jeuList: jeuList)
     }
     
     var body: some View {
         VStack{
             Text("Liste de jeux ")
             List{
-                ForEach(self.jeux){jeu in
+                ForEach(self.jeuList.jeux){jeu in
                     NavigationLink(
-                        destination : JeuDetailView(jeu:jeu),
+                        destination : JeuDetailView(jeu: jeu.model),
                         label : {
                             Text("\(jeu.name_jeu)")
                         }
@@ -56,6 +23,7 @@ struct JeuView: View {
                 }
             }
         }
+    }
 }
 
 struct JeuView_Previews: PreviewProvider {

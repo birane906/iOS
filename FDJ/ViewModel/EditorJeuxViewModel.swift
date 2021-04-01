@@ -16,11 +16,11 @@ enum EditorJeuxState : CustomStringConvertible{
 
     var description: String{
         switch self {
-        case .ready                               : return "ready"
-        case .loading(let s)                      : return "loading: \(s)"
-        case .loaded(let jeux)                 : return "loaded: \(jeux.count) tracks"
-        case .loadingError(let error)             : return "loadingError: Error loading -> \(error)"
-        case .newJeux(let jeux)             : return "newTracks: reset playJeux with \(jeux.count) tracks"
+        case .ready                             : return "ready"
+        case .loading(let s)                    : return "loading: \(s)"
+        case .loaded(let jeux)                  : return "loaded: \(jeux.count)"
+        case .loadingError(let error)           : return "loadingError: Error loading -> \(error)"
+        case .newJeux(let jeux)                 : return "reset with \(jeux.count)"
         }
     }
     
