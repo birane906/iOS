@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 class ZoneIntent {
     
-    var zonelist : SearchZoneViewModel
+    @ObservedObject var zonelist : SearchZoneViewModel
     
     init(zonelist: SearchZoneViewModel) {
         self.zonelist = zonelist
@@ -20,9 +20,18 @@ class ZoneIntent {
         self.zonelist.zoneListState = .ready
     }
     
-    func loadZone(url : String){
-        zonelist.zoneListState = .loading(url)
-        ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
+    func loaded(){
+        self.zonelist.zoneListState = .ready
+    }
+    
+    func loadZone(surl : String){
+//        zonelist.zoneListState = .loading(surl)
+//        ZoneListHelper.loadZonesFromAPI(url: surl, endofrequest: httpJsonLoaded)
+        guard let url = URL(string: surl) else {
+                    return
+                }
+                zonelist.zoneListState = .loading(surl)
+                ApiHelper.getJsonData(from: url, endofrequest: httpJsonLoaded)
     }
     
     func httpJsonLoaded(result: Result<[Zone], HttpRequestError>){
@@ -36,8 +45,13 @@ class ZoneIntent {
     }
     
     func loadListZoneFromApi(){
-        var url = "http://localhost:8080/api/zone"
-        self.zonelist.zoneListState = .loading(url)
-        ZoneListHelper.loadZonesFromAPI(url: url, endofrequest: httpJsonLoaded)
+        let apizone : String
+        apizone = "http://localhost:8080/api/zone"
+        guard let url = URL(string: apizone) else {
+                    return
+        }
+        self.zonelist.zoneListState = .loading(apizone)
+        //ZoneListHelper.loadZonesFromAPI(url: apizone, endofrequest: httpJsonLoaded)
+        ApiHelper.getJsonData(from: url, endofrequest: httpJsonLoaded)
     }
 }

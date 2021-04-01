@@ -18,7 +18,21 @@ struct JeuDetailView: View {
     var body: some View {
         VStack {
             Text("Jeu : \(jeu.name_jeu)")
+                .font(.largeTitle)
+                .padding()
+            Text("Jeu dans le zone: \(jeu.name_zone)")
+                .font(.largeTitle)
+                .padding()
             Text("Nombre joueur min : \(jeu.nb_joueurs_min)")
+                .padding()
+            Text("Nombre joueur max : \(jeu.nb_joueurs_max)")
+                .padding()
+            Text("Age minimum : \(jeu.agemin)")
+                .padding()
+            Text("Durée du jeu : \(jeu.duree)")
+                .padding()
+            Text("Type du jeu : \(jeu.libelle_type)")
+                .padding()
         }
     }
 }

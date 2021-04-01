@@ -64,28 +64,35 @@ class SearchZoneViewModel: ZonelistDelegate,ObservableObject{
     }
     
     
-//    @Published var zoneAddingError : Bool = false{
-//        didSet{
-//            if !zoneAddingError{
-//                zoneListState = .ready
-//            }
-//        }
-//    }
+    @Published var zoneAddingError : Bool = false{
+        didSet{
+            if !zoneAddingError{
+                zoneListState = .ready
+            }
+        }
+    }
     
     @Published var zoneListState : SearchZoneState = .ready{
         didSet{
+            #if DEBUG
+                debugPrint("SearchPlvm : state.didSet = \(zoneListState)")
+            #endif
             switch self.zoneListState {
             case let .loaded(data):
                 print(data)
                 self.model.new(zones: data)
                 //zoneListState = .new(model)
             case .loadingError:
-                print("error")
+                print("error loading")
             default:
                 return
             }
         }
     }
+    
+    func add(zones: [Zone]){
+           self.model.add(zones: zones)
+       }
     
     init(_ zonelist : Zonelist) {
         self.model = zonelist

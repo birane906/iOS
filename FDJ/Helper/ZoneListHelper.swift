@@ -16,6 +16,7 @@ struct JeuData : Codable {
     public var nb_joueurs_min : Int
     public var nb_joueurs_max : Int
     public var agemin : Int
+    public var name_zone : String
     public var editeurs : [EditeurData]
 }
 
@@ -28,7 +29,7 @@ struct ZoneData: Codable{
     public var id_zone: Int
     public var id_espace : Int
     public var name_zone : String
-    public var jeux : [JeuData]
+    public var jeux : [JeuData]?
 }
 
 struct ZoneListHelper {
@@ -38,7 +39,7 @@ struct ZoneListHelper {
         var zones = [Zone]()
         for zdata in data{
             let id : Int = zdata.id_zone
-            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone, jeux : JeuData2Jeu(data:zdata.jeux))
+            let zone = Zone(id_zone: id, id_espace: zdata.id_espace,name_zone: zdata.name_zone, jeux : JeuData2Jeu(data:zdata.jeux!))
             zones.append(zone)
         }
         return zones
@@ -48,8 +49,8 @@ struct ZoneListHelper {
         var jeux = [Jeu]()
         for jdata in data{
             let id: Int = jdata.id_jeu
-//            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, editeurs: EditeurData2Editeur(data: jdata.editeurs))
-//            jeux.append(jeu)
+            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, name_zone : jdata.name_zone ,editeurs: EditeurData2Editeur(data: jdata.editeurs))
+            jeux.append(jeu)
         }
         return jeux
     }
@@ -86,6 +87,75 @@ struct ZoneListHelper {
     
     static func loadZonesFromAPI(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
         self.loadZonesFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
+    }
+    
+    static func loadJeuxFromAPI(url surl: String, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+        guard let url = URL(string: surl) else {
+            endofrequest(.failure(.badURL(surl)))
+            return
+        }
+        self.loadJeuxFromAPI(url: url, endofrequest: endofrequest)
+    }
+    
+    
+    static func loadJeuxFromAPI(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+        self.loadJeuxFromJsonData(url: url, endofrequest: endofrequest, ItuneApiRequest: true)
+    }
+    
+    
+    // todo
+    private static func loadEditeursFromJsonData(url: URL, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
+        
+    }
+    
+    private static func loadJeuxFromJsonData(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decodedData : Decodable?
+             
+                decodedData = try? JSONDecoder().decode(JeuData.self, from: data)
+                
+                guard let decodedResponse = decodedData else {
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                var jeuxData : [JeuData]
+               
+                jeuxData = (decodedResponse as! [JeuData])
+                
+                guard let jeux = self.JeuData2Jeu(data: jeuxData) else{
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    endofrequest(.success(jeux))
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    if let error = error {
+                        guard let error = error as? URLError else {
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        endofrequest(.failure(.failingURL(error)))
+                    }
+                    else{
+                        guard let response = response as? HTTPURLResponse else{
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        guard response.statusCode == 200 else {
+                            endofrequest(.failure(.requestFailed))
+                            return
+                        }
+                        endofrequest(.failure(.unknown))
+                    }
+                }
+            }
+        }.resume()
     }
     
     private static func loadZonesFromJsonData(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void, ItuneApiRequest: Bool = true){
