@@ -12,23 +12,21 @@ class Jeu : Decodable, Identifiable {
     public var id_jeu : Int
     public var name_jeu : String
     public var id_type : Int
-    public var libelle_type : String
     public var duree : Int
     public var nb_joueurs_min : Int
     public var nb_joueurs_max : Int
     public var agemin : Int
-    public var editeurs : [Editeur]
+    public var id_editeur : Int
     
-    init(id_jeu:Int,name_jeu:String,id_type:Int,libelle_type:String,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,editeurs:[Editeur]){
+    init(id_jeu:Int,name_jeu:String,id_type:Int,duree:Int,nb_joueurs_min:Int,nb_joueurs_max:Int,agemin:Int,id_editeur:Int){
         self.id_jeu = id_jeu
         self.name_jeu = name_jeu
         self.id_type = id_type
-        self.libelle_type = libelle_type
         self.duree = duree
         self.nb_joueurs_min = nb_joueurs_min
         self.nb_joueurs_max = nb_joueurs_max
         self.agemin = agemin
-        self.editeurs = editeurs
+        self.id_editeur = id_editeur
     }
 }
 

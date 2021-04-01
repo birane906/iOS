@@ -24,7 +24,7 @@ struct EditorListView: View {
                 List {
                     ForEach(self.editorList.editors) { editor in
                         NavigationLink(
-                            destination: Text(editor.nom_editeur),
+                            destination: EditorJeuxView(editorJeux: EditorJeuxViewModel(EditorJeux()), id_editor: editor.id_editeur),
                             label: {
                                 Text(editor.nom_editeur)
                             })
@@ -32,7 +32,7 @@ struct EditorListView: View {
                 }
             }
         }.onAppear(perform: {
-            self.intent.loadEditorList(surl: "http://localhost:8080/api/editeur")
+            self.intent.loadEditorList(surl: "http://176.136.177.203:18080/api/editeur")
         })
     }
 }

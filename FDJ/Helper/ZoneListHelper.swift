@@ -48,8 +48,8 @@ struct ZoneListHelper {
         var jeux = [Jeu]()
         for jdata in data{
             let id: Int = jdata.id_jeu
-            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, editeurs: EditeurData2Editeur(data: jdata.editeurs))
-            jeux.append(jeu)
+//            let jeu = Jeu(id_jeu: id, name_jeu: jdata.name_jeu, id_type: jdata.id_type, libelle_type: jdata.libelle_type, duree: jdata.duree, nb_joueurs_min: jdata.nb_joueurs_min, nb_joueurs_max: jdata.nb_joueurs_min, agemin: jdata.agemin, editeurs: EditeurData2Editeur(data: jdata.editeurs))
+//            jeux.append(jeu)
         }
         return jeux
     }
