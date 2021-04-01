@@ -2,7 +2,7 @@
 //  Editeur.swift
 //  FDJ
 //
-//  Created by Jingjing XIANG on 25/03/2021.
+//  Created by user190389 on 3/31/21.
 //
 
 import Foundation
@@ -17,4 +17,3 @@ struct Editeur : Encodable,Decodable {
         self.nom_editeur = nom_editeur
     }
 }
-

@@ -13,7 +13,6 @@ class Jeu : ObservableObject,Identifiable,Encodable,Decodable {
     public var id_jeu : Int
     public var name_jeu : String
     public var id_type : Int
-    public var libelle_type : String
     public var duree : Int
     public var nb_joueurs_min : Int
     public var nb_joueurs_max : Int
@@ -25,7 +24,6 @@ class Jeu : ObservableObject,Identifiable,Encodable,Decodable {
         self.id_jeu = id_jeu
         self.name_jeu = name_jeu
         self.id_type = id_type
-        self.libelle_type = libelle_type
         self.duree = duree
         self.nb_joueurs_min = nb_joueurs_min
         self.nb_joueurs_max = nb_joueurs_max

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class JeuViewModel : Identifiable, ObservableObject,Equatable{
     
     let id = UUID()
