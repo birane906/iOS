@@ -1,21 +1,14 @@
-//
-//  MainView.swift
-//  FDJ
-//
-//  Created by Jingjing XIANG on 31/03/2021.
-//
-
 import SwiftUI
 struct MainView: View {
    // @ObservedObject var zone = ZoneList()
-    @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
-    
+//    @StateObject var searchZone : SearchZoneViewModel = SearchZoneViewModel(Zonelist())
+    @StateObject var editorList: EditorListViewModel = EditorListViewModel(EditorList())
     var body: some View {
         NavigationView{
             VStack{
                 LogoImage()
                 NavigationLink(
-                    destination : ZoneListView(searchZone: searchZone)
+                    destination : Text("Nowhere")
                 ){
                     Text("Search Zone")
                         .fontWeight(.semibold)
@@ -25,9 +18,10 @@ struct MainView: View {
                         .background(LinearGradient(gradient: Gradient(colors: [Color(.white),Color(.gray)]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(40)
                 }
-                Button(action:{print("Boutton cliqué")}){
-                                   EditeurButtom()
-                                       .padding(.bottom,50)
+                NavigationLink(
+                    destination: EditorListView(editorList: editorList)
+                ){
+                    EditeurButtom()
                 }
                 Button(action:{print("Boutton cliqué")}){
                                    JeuButtom()
@@ -85,5 +79,11 @@ struct JeuButtom: View {
             .frame(width: 180, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .background(Color.black)
             .cornerRadius(35.0)
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
     }
 }
