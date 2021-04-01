@@ -10,6 +10,8 @@ import SwiftUI
 struct ZoneListView: View {
     
     @ObservedObject var searchZone : SearchZoneViewModel
+    @StateObject var searchJeux : ListJeuxViewModel = ListJeuxViewModel(Jeuxlist())
+    
     var zoneintent : ZoneIntent
     
     @State private var textfield: String = ""
@@ -74,7 +76,7 @@ struct ZoneListView: View {
                 List{
                     ForEach(self.searchZone.zones.filter(filterSearch)){zone in
                         NavigationLink(
-                            destination: JeuView(jeux: zone.jeux),
+                            destination: ZoneJeuxView(zoneJeux: ZoneJeuxViewModel(ZoneJeux()), id_zone: zone.id_zone),
                             label: {
                                 Text("\(zone.name_zone)")
                             }).navigationViewStyle(StackNavigationViewStyle())
